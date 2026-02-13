@@ -1,0 +1,391 @@
+.valentine-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.valentine-box {
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+  padding: 60px 80px;
+  text-align: center;
+  max-width: 600px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.valentine-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 30px;
+  font-family: 'Georgia', serif;
+}
+
+.valentine-text {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 40px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Error Alert Styles */
+.error-alert {
+  background-color: #ff5252;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  box-shadow: 0 5px 20px rgba(255, 82, 82, 0.4);
+  animation: shake 0.5s ease-in-out;
+}
+
+.error-icon {
+  font-size: 1.5rem;
+}
+
+.error-text {
+  font-size: 1.0rem;
+  font-weight: bold;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.button-group {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.yes-button,
+.no-button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 20px 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yes-button {
+  color: white;
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  box-shadow: 0 5px 20px rgba(233, 30, 99, 0.4);
+}
+
+.yes-button:hover {
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(233, 30, 99, 0.6);
+}
+
+.no-button {
+  color: #666;
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.no-button:hover {
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  transform: none;
+}
+
+.yes-button:active {
+  transform: translateY(0);
+}
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  top: -50px;
+  font-size: 1.5rem;
+  animation: fall linear forwards;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+@keyframes fall {
+  0% {
+    top: -50px;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 110vh;
+    opacity: 0.5;
+    transform: rotate(720deg);
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+  padding: 20px;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #fff 0%, #ffe8f0 100%);
+  border-radius: 30px;
+  padding: 30px 40px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 20px 80px rgba(233, 30, 99, 0.5);
+  animation: bounceIn 0.6s ease-out;
+  position: relative;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Heart Border */
+.heart-border {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.heart-border span {
+  animation: heartPulse 1s ease-in-out infinite;
+}
+
+.heart-border span:nth-child(1) { animation-delay: 0s; }
+.heart-border span:nth-child(2) { animation-delay: 0.1s; }
+.heart-border span:nth-child(3) { animation-delay: 0.2s; }
+.heart-border span:nth-child(4) { animation-delay: 0.3s; }
+.heart-border span:nth-child(5) { animation-delay: 0.4s; }
+.heart-border span:nth-child(6) { animation-delay: 0.5s; }
+.heart-border span:nth-child(7) { animation-delay: 0.6s; }
+.heart-border span:nth-child(8) { animation-delay: 0.7s; }
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* Celebration Emoji */
+.celebration-emoji {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: rotate360 2s linear infinite;
+}
+
+@keyframes rotate360 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Animated Title */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 15px;
+  font-family: 'Georgia', serif;
+}
+
+.letter {
+  display: inline-block;
+  animation: bounce 0.5s ease-in-out;
+}
+
+.letter:nth-child(1) { animation-delay: 0.05s; }
+.letter:nth-child(2) { animation-delay: 0.1s; }
+.letter:nth-child(3) { animation-delay: 0.15s; }
+.letter:nth-child(4) { animation-delay: 0.2s; }
+.letter:nth-child(5) { animation-delay: 0.25s; }
+.letter:nth-child(6) { animation-delay: 0.3s; }
+.letter:nth-child(7) { animation-delay: 0.35s; }
+.letter:nth-child(8) { animation-delay: 0.4s; }
+.letter:nth-child(9) { animation-delay: 0.45s; }
+.letter:nth-child(10) { animation-delay: 0.5s; }
+.letter:nth-child(11) { animation-delay: 0.55s; }
+.letter:nth-child(12) { animation-delay: 0.6s; }
+.letter:nth-child(13) { animation-delay: 0.65s; }
+.letter:nth-child(14) { animation-delay: 0.7s; }
+.letter:nth-child(15) { animation-delay: 0.75s; }
+.letter:nth-child(16) { animation-delay: 0.8s; }
+.letter:nth-child(17) { animation-delay: 0.85s; }
+.letter:nth-child(18) { animation-delay: 0.9s; }
+.letter:nth-child(19) { animation-delay: 0.95s; }
+.letter:nth-child(20) { animation-delay: 1s; }
+.letter:nth-child(21) { animation-delay: 1.05s; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.rose-line {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  animation: sway 2s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.modal-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.sparkle-text {
+  font-weight: bold;
+  background: linear-gradient(45deg, #e91e63, #ff6b9d, #e91e63);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 2s ease infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.love-message {
+  color: #c2185b;
+  font-style: italic;
+}
+
+/* Floating hearts in modal */
+.hearts-animation {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  height: 40px;
+}
+
+.hearts-animation span {
+  display: inline-block;
+  animation: floatHeart 2s ease-in-out infinite;
+}
+
+.heart-1 { animation-delay: 0s; }
+.heart-2 { animation-delay: 0.2s; }
+.heart-3 { animation-delay: 0.4s; }
+.heart-4 { animation-delay: 0.6s; }
+.heart-5 { animation-delay: 0.8s; }
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.2); }
+}
+
+.cute-message {
+  background-color: rgba(233, 30, 99, 0.1);
+  padding: 12px;
+  border-radius: 15px;
+  margin: 15px 0;
+  font-size: 1.1rem;
+  color: #c2185b;
+  font-weight: bold;
+}
+
+.modal-close-button {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  border: none;
+  border-radius: 15px;
+  padding: 12px 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(233, 30, 99, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.button-shine-modal {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  to { left: 100%; }
+}
+
+.modal-close-button:hover {
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(233, 30, 99, 0.6);
+}
+
+.modal-close-button:active {
+  transform: translateY(0) scale(1);
+}
